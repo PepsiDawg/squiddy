@@ -9,7 +9,7 @@ import { FirebaseService } from '../../services/firebase.service';
 })
 export class NavigationComponent implements OnInit {
   isLoggedin = false;
-  constructor(private router: Router, private firebase: FirebaseService) { }
+  constructor(public router: Router, private firebase: FirebaseService) { }
 
   ngOnInit() {
     this.firebase.getAuthStatus().subscribe(result => this.isLoggedin = result.state);

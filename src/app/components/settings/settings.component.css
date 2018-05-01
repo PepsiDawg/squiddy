@@ -21,3 +21,7 @@
 .selected {
   background: #c9edff;
 }
+
+.setting-alert {
+  margin-top: 15px;
+}

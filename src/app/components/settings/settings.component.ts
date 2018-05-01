@@ -12,6 +12,7 @@ export class SettingsComponent implements OnInit {
   seasons = [];
   currentAccount;
   currentSeason;
+  loading = true;
 
   constructor(private firebase: FirebaseService) { }
 
@@ -26,6 +27,7 @@ export class SettingsComponent implements OnInit {
       this.seasons = result[1].sort();
       this.currentSeason = (result[2] == null) ? '' : result[2];
       this.currentAccount = (result[3] == null) ? '' : result[3];
+      this.loading = false;
     });
   }
 

@@ -156,7 +156,11 @@ export class FirebaseService {
 
   addData(payload) {
     let path = "users/" + this.user_key + "/data/season_" + this.current_season + "/" + this.current_account;
-    this.database.list(path).push(payload);
+    if(this.current_season != null && this.current_account != null) {
+      this.database.list(path).push(payload);
+    } else {
+      alert("Current Season and Account need to be set in Settings page!");
+    }
   }
 
   updateMatch(key, payload) {

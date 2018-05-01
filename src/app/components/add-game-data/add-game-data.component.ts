@@ -15,7 +15,7 @@ export class AddGameDataComponent implements OnInit {
   action = "Add";
   type: string;
   key: string;
-  group = ["Tim", "Kendrick", "Elly"];
+  group = [];
   maps;
   leaver = false;
   payload = {};
@@ -35,18 +35,22 @@ export class AddGameDataComponent implements OnInit {
             let data = result.payload.val();
             this.payload = data;
             this.type = data.type;
-            this.group = (data.group) ? data.group : []
+            this.group = (data.group != null) ? data.group : []
           }
         });
       } else {
         this.type = "Match";
       }
     });
+    this.firebase.getPlayingGroup().subscribe(result => {
+      this.group = (result.payload.val() != null) ? result.payload.val() : [];
+    });
   }
 
   onSubmit(data) {
     if(this.action === "Add") {
       this.firebase.addData(data);
+      this.firebase.setPlayingGroup(this.group);
     } else {
       this.firebase.updateMatch(this.key, data);
     }

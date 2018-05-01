@@ -1,0 +1,23 @@
+.title {
+  padding: 10px;
+}
+
+.option-container {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.option-item {
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.selected {
+  background: #c9edff;
+}

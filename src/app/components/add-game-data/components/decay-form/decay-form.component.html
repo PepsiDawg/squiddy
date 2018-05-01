@@ -1,0 +1,10 @@
+<form [formGroup]="decayForm">
+  <div class="form-group">
+    <label>Current SR</label>
+    <input 
+      class="form-control" 
+      [class.input-error]="decayForm.controls['sr'].errors && decayForm.controls['sr'].touched" 
+      placeholder="SR" formControlName="sr">
+  </div>
+  <button class="btn btn-primary text-light" (click)="submitForm()" [disabled]="decayForm.invalid">Add</button>
+</form>

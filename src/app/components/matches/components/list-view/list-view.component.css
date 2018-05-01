@@ -1,0 +1,34 @@
+table {
+  width: 100%;
+  text-align: center;
+}
+
+.decay {
+  background: #ffeaea;
+}
+
+.placement {
+  background: #eaf8ff;
+}
+
+tr {
+  cursor: pointer;
+}
+
+tr:hover {
+  background: #efefef;
+}
+
+tr.decay:hover {
+  background: #ffc9c9;
+}
+
+tr.placement:hover {
+  background: #c9edff;
+}
+
+@media(max-width: 768px) {
+  table {
+    font-size: 15px;
+  }
+}

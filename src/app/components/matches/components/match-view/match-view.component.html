@@ -1,0 +1,18 @@
+<div class="view-container">
+  <div class="view-modal" (click)="stopprop($event)">
+    <div class="header">{{gameMatch.match.type}}</div>
+    <div class="main">
+      <h3 class="map text-primary" *ngIf="data.map != undefined">{{mapData[data.map]}}</h3>
+      <div class="group-container" *ngIf="gameMatch.match.group != undefined">
+        <div class="text-secondary" *ngFor="let member of gameMatch.match.group">{{member}}</div>
+      </div>
+      <h3 class="outcome" *ngIf="data.outcome != undefined">{{outcomeData[data.outcome]}}</h3>
+      <h3 class="sr" [class.decay]="gameMatch.match.type==='Decay'" *ngIf="data.sr != undefined">{{data.sr}}</h3>
+      <i class="fas fa-suitcase" *ngIf="data.leaver != undefined" [class.leaver]="data.leaver"></i>
+    </div>
+    <div class="btn-container">
+      <a class="btn-edit" (click)="takeAction('edit')">Edit</a>
+      <a class="btn-del" (click)="takeAction('delete')">Delete</a>
+    </div>
+  </div>
+</div>

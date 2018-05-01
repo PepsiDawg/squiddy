@@ -1,0 +1,46 @@
+.group-member {
+  display: inline-block;
+  border: 2px solid #AAA;
+  color: #555;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.group-member span {
+  color: #e57585;
+  margin-left: 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-bottom {
+  margin-top: 50px;
+}
+
+.btn-bottom a {
+  margin-right: 10px;
+}
+
+.fa-check-square, .fa-square {
+  font-size: 28px;
+}
+
+.custom-check {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 10px 0px 10px;
+  border-radius: 5px 0px 0px 5px;
+  color:white;
+  cursor: pointer;
+}
+
+.sr-label {
+  margin-top: 20px;
+}
+
+.input-error {
+  border-left: 5px solid red;
+}

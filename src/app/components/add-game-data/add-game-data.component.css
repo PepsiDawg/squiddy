@@ -1,0 +1,20 @@
+.type-select {
+  font-size: 35px;
+  color: #666;
+  margin: 15px;
+  width: 100%;
+}
+
+.type-name {
+  color: #799ad1;
+}
+
+.form-container {
+  height: 100%;
+}
+
+@media(max-width: 768px) {
+  .type-select {
+    text-align: center;
+  }
+}

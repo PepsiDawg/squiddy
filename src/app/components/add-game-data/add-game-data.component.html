@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="dropdown type-select">
+    {{action}} 
+    <span class="dropdown-toggle type-name" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{type}}
+    </span>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" (click)="type='Match'">Match</a>
+      <a class="dropdown-item" (click)="type='Decay'">Decay</a>
+      <a class="dropdown-item" (click)="type='Placement'">Placement</a>
+    </div>
+  </div>
+  <div class="col-12 form-container">
+      <app-match-form
+        *ngIf="type=='Match'" 
+        [group]="group" 
+        [payload]="payload" 
+        [maps]="maps"
+        (onSubmit)="onSubmit($event)"></app-match-form>
+      <app-decay-form 
+        *ngIf="type=='Decay'"
+        [payload]="payload"
+        (onSubmit)="onSubmit($event)"></app-decay-form>
+      <app-placement-form 
+        *ngIf="type=='Placement'"
+        [group]="group" 
+        [payload]="payload" 
+        [maps]="maps"
+        (onSubmit)="onSubmit($event)"></app-placement-form>
+  </div>
+</div>

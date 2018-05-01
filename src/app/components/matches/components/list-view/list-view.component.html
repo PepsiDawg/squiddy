@@ -1,0 +1,28 @@
+<div class="col-12">
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>Map</th>
+      <th>SR</th>
+      <th>Outcome</th>
+    </thead>
+    <tbody>
+      <tr 
+        *ngFor="let data of gameData.slice().reverse(); let i = index" 
+        [class.placement]="data.match.type==='Placement'" 
+        [class.decay]="data.match.type==='Decay'"
+        (click)="view(gameData.length - i - 1)">
+        <td>{{gameData.length - i}}</td>
+  
+        <td *ngIf="data.match.data.map != undefined">{{mapData[data.match.data.map]}}</td>
+        <td *ngIf="data.match.data.map == undefined">Decay</td>
+  
+        <td *ngIf="data.match.data.sr != undefined">{{data.match.data.sr}}</td>
+        <td *ngIf="data.match.data.sr == undefined"></td>
+  
+        <td *ngIf="data.match.data.outcome != undefined">{{outcomeData[data.match.data.outcome]}}</td>
+        <td *ngIf="data.match.data.outcome == undefined"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

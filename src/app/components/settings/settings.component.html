@@ -1,0 +1,37 @@
+<div class="row">
+  <h1 class="title">Settings</h1>
+  <div class="col-12">
+    <div class="form-group">
+      <label>Account</label>
+      <div class="input-group">
+        <input #accountInput class="form-control" placeholder="myAccount#1234">
+        <div class="input-group-append">
+          <button class="btn btn-primary" (click)="addAccount(accountInput)" [disabled]="accountInput.value===''">Add</button>
+        </div>
+      </div>
+      <div class="options-container">
+        <div 
+          *ngFor="let account of accounts"
+          class="option-item"
+          [class.selected]="currentAccount===account"
+          (click)="setCurrentAccount(account)">{{account}}</div>
+      </div>
+    </div>
+    <div class="form-group">
+        <label>Season</label>
+        <div class="input-group">
+          <input #seasonInput class="form-control" placeholder="Season">
+          <div class="input-group-append">
+            <button class="btn btn-primary" (click)="addSeason(seasonInput)" [disabled]="seasonInput.value===''">Add</button>
+          </div>
+        </div>
+        <div class="options-container">
+            <div 
+            *ngFor="let season of seasons"
+              class="option-item"
+              [class.selected]="currentSeason===season"
+              (click)="setCurrentSeason(season)">Season {{season}}</div>
+          </div>
+      </div>
+  </div>
+</div>

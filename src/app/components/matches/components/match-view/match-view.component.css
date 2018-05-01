@@ -1,0 +1,105 @@
+.view-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+}
+
+.view-modal {
+  width: 75%;
+  height: 75%;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 75px;
+  font-size: 35px;
+  line-height: 75px;
+  text-align: center;
+  background: #f5f5f5;
+  border-bottom: 5px solid #666;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.main {
+  flex: 1;
+  background: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.group-container {
+  width: 100%;
+  overflow-wrap: normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.group-container div {
+  margin: 5px;
+}
+
+.btn-container {
+  height: 75px;
+  width: 100%;
+  justify-self: flex-end;
+  border-top: 5px solid #666;
+  border-radius: 0px 0px 15px 15px;
+  overflow: hidden;
+}
+
+.btn-container a {
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  color: #555;
+  float: left;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-edit {
+  background:  #c9edff;
+}
+
+.btn-edit:hover {
+  background: #a0dfff;
+}
+
+.btn-del {
+  background: #ffc9c9;
+}
+
+.btn-del:hover {
+  background: #ffa0a0;
+}
+
+.map {
+  font-size: 30px;
+}
+
+.fa-suitcase {
+  font-size: 50px;
+  color: #efefef;
+}
+
+.leaver, .decay {
+  color: #ffa0a0;
+}
+
+@media(min-width: 769px) {
+  .view-modal {
+    width: 30%;
+    height: 60%;
+  }
+}

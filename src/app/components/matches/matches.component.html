@@ -1,0 +1,19 @@
+<div class="row">
+  <h1 class="title">Matches</h1>
+  <app-list-view 
+    class="table-view" 
+    [gameData]="gameData"
+    [mapData]="mapData"
+    [outcomeData]="outcomeData"
+    (matchClicked)="detailedView($event)"></app-list-view>
+</div>
+<div 
+  *ngIf="viewMatch"
+  class="view-container" 
+  (click)="closeView()">
+  <app-match-view 
+    [gameMatch]="gameMatch"
+    [mapData]="mapData"
+    [outcomeData]="outcomeData"
+    (onTakeAction)="onTakeAction($event)"></app-match-view>
+</div>

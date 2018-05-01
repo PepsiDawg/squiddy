@@ -1,0 +1,8 @@
+<div class="row home-container">
+  <img class="img-top" src="assets/ow-decal.png">
+  <div class="col-12 login">
+    <button class="btn btn-lg btn-outline-primary" *ngIf="!loggedin" (click)="login()">Login</button>
+    <button class="btn btn-lg btn-outline-danger" *ngIf="loggedin" (click)="logout()">Logout</button>
+  </div>
+  <img class="img-bottom" src="assets/ow-heros.png">
+</div>

@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand text-light" (click)="router.navigate([''])">Squiddy</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExample04">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"
+      *ngIf="isLoggedin"
+      [routerLink]="['matches/new']" 
+      [routerLinkActive]="['active']"
+      [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link">Add</a>
+      </li>
+      <li class="nav-item"
+      *ngIf="isLoggedin"
+      [routerLink]="['matches']" 
+      [routerLinkActive]="['active']"
+      [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link" (click)="navigate('matches')">Matches</a>
+      </li>
+      <li class="nav-item"
+      *ngIf="isLoggedin"
+      [routerLink]="['stats']" 
+      [routerLinkActive]="['active']"
+      [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link">Stats</a>
+      </li>
+      <li class="nav-item"
+      *ngIf="isLoggedin"
+      [routerLink]="['settings']" 
+      [routerLinkActive]="['active']"
+      [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link">Settings</a>
+      </li>
+    </ul>
+  </div>
+</nav>

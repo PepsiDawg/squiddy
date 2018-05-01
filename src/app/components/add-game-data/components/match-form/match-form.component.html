@@ -1,0 +1,48 @@
+<form [formGroup]="matchForm">
+  <div class="form-group">
+    <label>Map</label>
+    <select 
+      class="form-control" 
+      [class.input-error]="matchForm.controls['map'].errors && matchForm.controls['map'].touched" 
+      formControlName="map">
+      <option selected disabled>Select A Map</option>
+      <option *ngFor="let map of mapNames" value="{{maps[map]}}">{{map}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Outcome</label>
+    <select 
+      class="form-control" 
+      [class.input-error]="matchForm.controls['outcome'].errors && matchForm.controls['outcome'].touched"
+      formControlName="outcome">
+      <option selected disabled>Select Match Outcome</option>
+      <option value="0">Win</option>
+      <option value="1">Draw</option>
+      <option Value="2">Loss</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>SR</label>
+    <input 
+      class="form-control" 
+      [class.input-error]="matchForm.controls['sr'].errors && matchForm.controls['sr'].touched"
+      placeholder="SR" formControlName="sr">
+  </div>
+  <label>Group</label>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <a class="btn btn-primary text-light" (click)="onGroupAdd(memberInput)">Add</a>
+    </div>
+    <input #memberInput class="form-control" placeholder="Group Member">
+  </div>
+  <div class="group-contianer">
+    <div class="group-member" *ngFor="let member of group">
+      {{member}} <span (click)="onGroupRemove(member)"><i class="far fa-trash-alt"></i></span>
+    </div>
+  </div>
+  <div class="btn-bottom">
+    <a *ngIf="!leaver" class="btn btn-success text-light" (click)="leaver = !leaver">No one left</a>
+    <a *ngIf="leaver" class="btn btn-danger text-light" (click)="leaver = !leaver">Someone left</a>
+    <button class="btn btn-primary text-light" (click)="submitForm()" [disabled]="matchForm.invalid">Add</button>
+  </div>
+</form>
